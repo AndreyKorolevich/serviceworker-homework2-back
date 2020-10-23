@@ -81,7 +81,6 @@ router.get('/news', async (ctx) => {
       news,
     });
     resolve();
-
   });
 });
 
