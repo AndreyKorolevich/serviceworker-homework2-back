@@ -76,7 +76,7 @@ const news = [
 router.get('/news', async (ctx) => {
   await new Promise((resolve) => {
     if (Math.random() * 10 <= 5) ctx.response.status = 500;
-    ctx.response.body = JSON.stringify({
+    else ctx.response.body = JSON.stringify({
       status: 'ok',
       news,
     });
@@ -86,6 +86,6 @@ router.get('/news', async (ctx) => {
 
 app.use(router.routes()).use(router.allowedMethods());
 const server = http.createServer(app.callback());
-const port = process.env.PORT || 7070;
+const port = process.env.PORT || 7060;
 server.listen(port);
 
